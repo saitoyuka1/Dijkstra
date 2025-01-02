@@ -1,8 +1,8 @@
 x=1000
-graph =[[x,3,8,5,5,x,x],
-        [x,x,2,x,x,5,x], 
+graph =[[x,4,2,x,2,x,x],
+        [x,x,3,x,x,5,x], 
         [x,x,x,3,6,x,7], 
-        [x,x,x,x,3,x,2], 
+        [x,x,x,x,8,x,6], 
         [x,x,x,x,x,1,x],
         [x,x,x,x,x,x,2],
         [x,x,x,x,x,x,x]]
@@ -52,12 +52,13 @@ while len(S) < len(V):
 
 print("minimum cost=" ,d0[V[6]])
 print("minimum path")
-v=V[6]
-print(v)
-while(pre[v]!=V[0]):
-  print(pre[v])
+path=[]
+path.append(V[6])
+while(V.index(pre[v])>0):
+  path.append(pre[v])
   v=pre[v]
-print(V[0])
-
+path.append(V[0])
+for i in path[::-1]:
+  print(i,end="  ")
 
 
