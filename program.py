@@ -40,9 +40,10 @@ while len(S) < len(V):
   for i in range(len(graph[m])):
     if(graph[m][i]!=x):
       NS.add(V[i])
-      if(graph[m][i]+d0[V[m]]<d0[V[i]]):
-        d0[V[i]]=graph[m][i]+d0[V[m]]
-        pre[V[i]]=V[m]
+      if V[i] not in S:
+        if(graph[m][i]+d0[V[m]]<d0[V[i]]):
+          d0[V[i]]=graph[m][i]+d0[V[m]]
+          pre[V[i]]=V[m]
         
   print("")
   print("S:",S)
